@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<!--
+	周秀琳个人网站
+	基于 Future Imperfect 模板
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>周秀琳 | 蘇大生活記錄</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.skill-bar {
+				height: 6px;
+				background: #e0e0e0;
+				border-radius: 3px;
+				margin-top: 8px;
+				overflow: hidden;
+			}
+			
+			.skill-level {
+				height: 100%;
+				background: #f56a6a;
+				border-radius: 3px;
+			}
+			
+			.music-item {
+				padding: 15px;
+				border-bottom: 1px solid #eee;
+			}
+			
+			.music-item:last-child {
+				border-bottom: none;
+			}
+			
+			.music-info {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 5px;
+			}
+			
+			.music-play {
+				color: #f56a6a;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			
+			.daily-entry {
+				margin-bottom: 30px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid #eee;
+			}
+			
+			.daily-entry:last-child {
+				border-bottom: none;
+			}
+			
+			.major {
+				background-color: #e8f4fd;
+				padding: 8px 15px;
+				border-radius: 20px;
+				display: inline-block;
+				margin-top: 10px;
+				font-size: 0.9em;
+			}
+			
+			.tag {
+				display: inline-block;
+				background-color: #f0f0f0;
+				padding: 3px 10px;
+				border-radius: 12px;
+				font-size: 0.8em;
+				margin-right: 5px;
+				margin-top: 5px;
+			}
+			
+			.campus-tag {
+				background-color: #e6f7ff;
+				color: #1890ff;
+				border: 1px solid #91d5ff;
+			}
+			
+			.freshman-tag {
+				background-color: #f6ffed;
+				color: #52c41a;
+				border: 1px solid #b7eb8f;
+			}
+			
+			.contact-form {
+				margin-top: 20px;
+			}
+			
+			.form-group {
+				margin-bottom: 15px;
+			}
+			
+			.form-group label {
+				display: block;
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+			
+			.form-group input,
+			.form-group textarea {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				font-family: inherit;
+			}
+			
+			.form-group textarea {
+				height: 120px;
+				resize: vertical;
+			}
+			
+			.submit-btn {
+				background-color: #f56a6a;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 1em;
+			}
+			
+			.submit-btn:hover {
+				background-color: #e05555;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">周秀琳</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="#about">關於我</a></li>
+								<li><a href="#daily">日常記錄</a></li>
+								<li><a href="#music">音樂歌單</a></li>
+								<li><a href="#campus">天賜莊校區</a></li>
+								<li><a href="#contact">聯繫我</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">搜索</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="搜索記錄..." />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">菜單</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="搜索記錄..." />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#about">
+											<h3>關於我</h3>
+											<p>蘇州大學2023級新生</p>
+										</a>
+									</li>
+									<li>
+										<a href="#daily">
+											<h3>日常記錄</h3>
+											<p>大一生活點滴</p>
+										</a>
+									</li>
+									<li>
+										<a href="#music">
+											<h3>音樂歌單</h3>
+											<p>椎名林檎 & vast&hazy</p>
+										</a>
+									</li>
+									<li>
+										<a href="#contact">
+											<h3>聯繫我</h3>
+											<p>發送郵件給我</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#contact" class="button large fit">發送消息</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- 个人简介 -->
+							<article class="post" id="about">
+								<header>
+									<div class="title">
+										<h2>關於我</h2>
+										<p>蘇州大學視覺傳達專業大一新生</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2023-11-01">更新於 2023年11月</time>
+										<a href="#about" class="author"><span class="name">周秀琳</span><img src="images/avatar.jpg" alt="周秀琳" /></a>
+									</div>
+								</header>
+								<a href="#about" class="image featured"><img src="images/pic01.jpg" alt="周秀琳" /></a>
+								<p>我是周秀琳，蘇州大學藝術學院視覺傳達設計專業2023級新生，目前在天賜莊校區學習生活。剛從高中步入大學，對一切都充滿好奇與期待。</p>
+								<p>喜歡畫畫、攝影，正在努力適應大學的學習節奏。平時會帶著素描本在校園裡寫生，也會用手機記錄下天賜莊校區的美麗風景。對日本音樂和獨立音樂很感興趣，特別是椎名林檎和vast&hazy的音樂。</p>
+								<div class="major">蘇州大學 · 視覺傳達設計專業 · 2023級</div>
+								<span class="tag freshman-tag">大一新生</span>
+								<span class="tag campus-tag">天賜莊校區</span>
+								<footer>
+									<ul class="actions">
+										<li><a href="#daily" class="button large">看看我的日常</a></li>
+									</ul>
+									<ul class="stats">
+										<li><span class="tag">設計學習</span></li>
+										<li><span class="tag">校園探索</span></li>
+										<li><span class="tag">音樂</span></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- 日常记录1 -->
+							<article class="post" id="daily">
+								<header>
+									<div class="title">
+										<h2>大學第一個期中周</h2>
+										<p>圖書館、咖啡和設計基礎作業</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2023-11-15">2023年11月15日</time>
+										<a href="#" class="author"><span class="name">周秀琳</span><img src="images/avatar.jpg" alt="周秀琳" /></a>
+									</div>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="圖書館學習" /></a>
+								<p>進入大學後的第一個期中周，比想像中要忙碌。設計基礎課的作業需要手繪20張構圖練習，色彩課要完成一個色環研究，還有設計史的要背誦很多知識點。</p>
+								<p>最近每天都在本部圖書館四樓靠窗的位置學習，那裡光線很好，能看到外面的銀杏樹。學習累了就聽椎名林檎的《歌舞伎町の女王》，她的音樂有種奇特的能量，能讓我重新集中注意力。</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="#" class="button large">查看完整記錄</a></li>
+									</ul>
+									<ul class="stats">
+										<li><span class="tag">學習日常</span></li>
+										<li><span class="tag">期中周</span></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">6</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- 日常记录2 -->
+							<article class="post" id="campus">
+								<header>
+									<div class="title">
+										<h2>探索天賜莊校區</h2>
+										<p>紅磚建築與秋天的梧桐</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2023-11-08">2023年11月8日</time>
+										<a href="#" class="author"><span class="name">周秀琳</span><img src="images/avatar.jpg" alt="周秀琳" /></a>
+									</div>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="天賜莊校區" /></a>
+								<p>週末沒有課，帶著相機在校園裡閒逛。天賜莊校區的建築真的很美，特別是那些紅磚老樓，在秋天的陽光下顯得格外有韻味。</p>
+								<p>從鐘樓走到精正樓，再穿過數學樓前的那排梧桐樹，落葉踩在腳下沙沙作響。遇到幾位學長學姐在寫生，鼓起勇氣問能不能看看他們的作品，得到了很多鼓勵和建議。大學生活原來可以這麼豐富多彩。</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="#" class="button large">查看完整記錄</a></li>
+									</ul>
+									<ul class="stats">
+										<li><span class="tag campus-tag">天賜莊校區</span></li>
+										<li><span class="tag">校園探索</span></li>
+										<li><a href="#" class="icon solid fa-heart">35</a></li>
+										<li><a href="#" class="icon solid fa-comment">9</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- 分页 -->
+							<ul class="actions pagination">
+								<li><a href="" class="disabled button large previous">上一頁</a></li>
+								<li><a href="#" class="button large next">更多記錄</a></li>
+							</ul>
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- 个人简介侧栏 -->
+							<section id="intro">
+								<a href="#" class="logo"><img src="images/logo.jpg" alt="周秀琳" /></a>
+								<header>
+									<h2>周秀琳</h2>
+									<p>蘇大視傳2023級<br>天賜莊校區生活記錄</p>
+								</header>
+							</section>
+
+						<!-- 我的歌单 -->
+							<section id="music">
+								<h2 class="major">最近在聽</h2>
+								<div class="mini-posts">
+									<div class="music-item">
+										<h4>歌舞伎町の女王 - 椎名林檎</h4>
+										<div class="music-info">
+											<span>日本 · 另類搖滾</span>
+											<span class="music-play">正在播放</span>
+										</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 85%"></div>
+										</div>
+									</div>
+									<div class="music-item">
+										<h4>ありきたりな女 - 椎名林檎</h4>
+										<div class="music-info">
+											<span>日本 · 爵士搖滾</span>
+											<span class="music-play">♫</span>
+										</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 70%"></div>
+										</div>
+									</div>
+									<div class="music-item">
+										<h4>與浪之間 - vast & hazy</h4>
+										<div class="music-info">
+											<span>台灣 · 獨立音樂</span>
+											<span class="music-play">♫</span>
+										</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 90%"></div>
+										</div>
+									</div>
+									<div class="music-item">
+										<h4>食人夢 - 椎名林檎</h4>
+										<div class="music-info">
+											<span>日本 · 實驗搖滾</span>
+											<span class="music-play">♫</span>
+										</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 65%"></div>
+										</div>
+									</div>
+									<div class="music-item">
+										<h4>下次見 - vast & hazy</h4>
+										<div class="music-info">
+											<span>台灣 · 民謠搖滾</span>
+											<span class="music-play">♫</span>
+										</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 75%"></div>
+										</div>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="#" class="button">查看完整歌單</a></li>
+								</ul>
+							</section>
+
+						<!-- 近期日常记录 -->
+							<section>
+								<h2 class="major">近期記錄</h2>
+								<ul class="posts">
+									<li>
+										<article class="daily-entry">
+											<header>
+												<h3><a href="#">第一次參加社團招新</a></h3>
+												<time class="published" datetime="2023-11-05">2023年11月5日</time>
+											</header>
+											<p>百團大戰真的好熱鬧！最後加入了攝影社和動漫社，認識了幾個同專業的同學...</p>
+											<span class="tag">社團活動</span>
+											<span class="tag">新生體驗</span>
+										</article>
+									</li>
+									<li>
+										<article class="daily-entry">
+											<header>
+												<h3><a href="#">設計基礎課第一份作業</a></h3>
+												<time class="published" datetime="2023-10-28">2023年10月28日</time>
+											</header>
+											<p>完成了點線面構成的作業，老師給了不錯的評價，但還有很多需要改進的地方...</p>
+											<span class="tag">專業學習</span>
+											<span class="tag">作業</span>
+										</article>
+									</li>
+									<li>
+										<article class="daily-entry">
+											<header>
+												<h3><a href="#">宿舍生活小記</a></h3>
+												<time class="published" datetime="2023-10-20">2023年10月20日</time>
+											</header>
+											<p>和室友一起去觀前街吃了蘇州特色小吃，第一次嘗試糖粥，比想像中好吃...</p>
+											<span class="tag">宿舍生活</span>
+											<span class="tag">美食探索</span>
+										</article>
+									</li>
+									<li>
+										<article class="daily-entry">
+											<header>
+												<h3><a href="#">聆聽vast&hazy專場</a></h3>
+												<time class="published" datetime="2023-10-15">2023年10月15日</time>
+											</header>
+											<p>在音樂App上發現了這個台灣獨立樂團，主唱的聲音很有辨識度，歌詞也很觸動人...</p>
+											<span class="tag">音樂分享</span>
+											<span class="tag">vast&hazy</span>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						<!-- 联系信息 -->
+							<section id="footer" class="contact">
+								<h2>聯繫我</h2>
+								<p id="contact">歡迎交流大學生活、設計學習或音樂分享！</p>
+								
+								<div class="contact-form">
+									<form id="emailForm" method="post" action="#">
+										<div class="form-group">
+											<label for="senderName">你的名字</label>
+											<input type="text" id="senderName" name="senderName" required>
+										</div>
+										<div class="form-group">
+											<label for="senderEmail">你的郵箱</label>
+											<input type="email" id="senderEmail" name="senderEmail" required>
+										</div>
+										<div class="form-group">
+											<label for="message">消息內容</label>
+											<textarea id="message" name="message" required></textarea>
+										</div>
+										<button type="submit" class="submit-btn">發送郵件</button>
+									</form>
+								</div>
+								
+								<p style="margin-top: 20px; font-size: 0.9em;">或直接發送到我的QQ郵箱：<br>
+								<strong>2196854752@qq.com</strong></p>
+								
+								<ul class="icons">
+									<li><a href="https://mail.qq.com" class="icon solid fa-envelope" title="QQ郵箱"><span class="label">QQ郵箱</span></a></li>
+									<li><a href="https://music.163.com" class="icon solid fa-music" title="網易雲音樂"><span class="label">網易雲音樂</span></a></li>
+									<li><a href="https://weibo.com" class="icon brands fa-weibo" title="微博"><span class="label">微博</span></a></li>
+									<li><a href="https://bilibili.com" class="icon brands fa-bilibili" title="B站"><span class="label">B站</span></a></li>
+								</ul>
+								<p class="copyright">&copy; 周秀琳 2023. 蘇州大學視覺傳達2023級<br>天賜莊校區 · 設計基於 <a href="http://html5up.net">HTML5 UP</a>.</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- 自定义脚本 -->
+			<script>
+				// 平滑滚动
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						const targetId = this.getAttribute('href');
+						if(targetId === '#') return;
+						
+						const targetElement = document.querySelector(targetId);
+						if(targetElement) {
+							window.scrollTo({
+								top: targetElement.offsetTop - 80,
+								behavior: 'smooth'
+							});
+						}
+					});
+				});
+				
+				// 搜索功能占位
+				document.querySelectorAll('form.search').forEach(form => {
+					form.addEventListener('submit', function(e) {
+						e.preventDefault();
+						const query = this.querySelector('input[type="text"]').value;
+						if(query.trim()) {
+							alert('搜索功能: ' + query);
+						}
+					});
+				});
+				
+				// 歌单播放效果
+				document.querySelectorAll('.music-play').forEach(playBtn => {
+					playBtn.addEventListener('click', function(e) {
+						e.preventDefault();
+						const songTitle = this.closest('.music-item').querySelector('h4').textContent;
+						alert('開始播放: ' + songTitle);
+					});
+				});
+				
+				// 邮件表单提交处理
+				document.getElementById('emailForm').addEventListener('submit', function(e) {
+					e.preventDefault();
+					
+					const senderName = document.getElementById('senderName').value;
+					const senderEmail = document.getElementById('senderEmail').value;
+					const message = document.getElementById('message').value;
+					
+					// 模拟发送邮件（实际需要后端支持）
+					const emailContent = `
+發件人: ${senderName} <${senderEmail}>
+收件人: 周秀琳 <2196854752@qq.com>
+主題: 來自個人網站的留言
+
+${message}
+
+---
+此消息通過周秀琳個人網站發送
+					`;
+					
+					// 在实际应用中，这里应该通过后端API发送邮件
+					// 这里只是一个前端演示
+					alert(`郵件已準備發送！\n\n收件人: 2196854752@qq.com\n發件人: ${senderName}\n\n內容預覽:\n${message.substring(0, 100)}${message.length > 100 ? '...' : ''}\n\n(註: 此為演示功能，實際發送需要後端支持)`);
+					
+					// 清空表单
+					document.getElementById('emailForm').reset();
+					
+					// 在实际应用中，可以添加以下代码：
+					// window.location.href = "mailto:2196854752@qq.com?subject=" + 
+					//   encodeURIComponent("來自個人網站的留言") + "&body=" + 
+					//   encodeURIComponent(`發件人: ${senderName} <${senderEmail}>\n\n${message}`);
+				});
+			</script>
+
+	</body>
+</html>
