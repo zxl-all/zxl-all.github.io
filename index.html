@@ -12,6 +12,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			/* 增大工具栏导航字体 */
+			#header .links ul li a {
+				font-size: 1.1em;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+			}
+			
+			#header .links ul li a:hover {
+				color: #f56a6a;
+				border-bottom: 2px solid #f56a6a;
+			}
+			
+			/* 增大菜单中的导航链接字体 */
+			#menu .links li a h3 {
+				font-size: 1.2em;
+				font-weight: 600;
+			}
+			
+			#menu .links li a p {
+				font-size: 1em;
+			}
+			
+			/* 其他原有样式 */
 			.skill-bar {
 				height: 6px;
 				background: #e0e0e0;
@@ -130,6 +153,74 @@
 			.submit-btn:hover {
 				background-color: #e05555;
 			}
+			
+			/* 快捷键提示样式 */
+			.key-hint {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background-color: rgba(0, 0, 0, 0.8);
+				color: white;
+				padding: 10px 15px;
+				border-radius: 5px;
+				font-size: 14px;
+				z-index: 1000;
+				display: none;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			}
+			
+			.key-hint.show {
+				display: block;
+				animation: fadeInOut 3s ease-in-out;
+			}
+			
+			.shortcut-key {
+				display: inline-block;
+				background-color: #555;
+				color: white;
+				padding: 2px 8px;
+				border-radius: 3px;
+				font-family: monospace;
+				margin: 0 5px;
+			}
+			
+			@keyframes fadeInOut {
+				0% { opacity: 0; }
+				20% { opacity: 1; }
+				80% { opacity: 1; }
+				100% { opacity: 0; }
+			}
+			
+			/* 文章正文样式 - 区分工具栏 */
+			.post p {
+				font-size: 1em;
+				line-height: 1.7;
+				color: #333;
+			}
+			
+			.post h2, .post h3 {
+				font-weight: 600;
+				color: #222;
+			}
+			
+			/* 增加导航链接的活动状态 */
+			#header .links ul li a.active {
+				color: #f56a6a;
+				font-weight: 700;
+				border-bottom: 2px solid #f56a6a;
+			}
+			
+			/* 响应式调整 */
+			@media screen and (max-width: 736px) {
+				#header .links ul li a {
+					font-size: 1em;
+					padding: 8px 12px;
+				}
+				
+				#header h1 a {
+					font-size: 1.5em;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -142,7 +233,7 @@
 						<h1><a href="index.html">周秀琳</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#about">關於我</a></li>
+								<li><a href="#about" class="active">關於我</a></li>
 								<li><a href="#daily">日常記錄</a></li>
 								<li><a href="#music">音樂歌單</a></li>
 								<li><a href="#campus">天賜莊校區</a></li>
@@ -252,18 +343,22 @@
 									<div class="title">
 										<h2>大學第一個期中周</h2>
 										<p>圖書館、咖啡和設計基礎作業</p>
+										<!-- 添加快捷键提示 -->
+										<div style="font-size: 0.8em; color: #666; margin-top: 5px;">
+											快捷鍵：按下 <kbd style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: monospace;">S</kbd> 跳轉詳細頁面
+										</div>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2023-11-15">2023年11月15日</time>
 										<a href="#" class="author"><span class="name">周秀琳</span><img src="images/avatar.jpg" alt="周秀琳" /></a>
 									</div>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="圖書館學習" /></a>
+								<a href="single.html" class="image featured"><img src="images/pic02.jpg" alt="圖書館學習" /></a>
 								<p>進入大學後的第一個期中周，比想像中要忙碌。設計基礎課的作業需要手繪20張構圖練習，色彩課要完成一個色環研究，還有設計史的要背誦很多知識點。</p>
 								<p>最近每天都在本部圖書館四樓靠窗的位置學習，那裡光線很好，能看到外面的銀杏樹。學習累了就聽椎名林檎的《歌舞伎町の女王》，她的音樂有種奇特的能量，能讓我重新集中注意力。</p>
 								<footer>
 									<ul class="actions">
-										<li><a href="#" class="button large">查看完整記錄</a></li>
+										<li><a href="single.html" class="button large">查看完整記錄</a></li>
 									</ul>
 									<ul class="stats">
 										<li><span class="tag">學習日常</span></li>
@@ -472,6 +567,11 @@
 
 			</div>
 
+		<!-- 快捷键提示 -->
+		<div id="keyHint" class="key-hint">
+			正在跳轉到<span class="shortcut-key">單篇文章頁面</span>...
+		</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
@@ -543,11 +643,77 @@ ${message}
 					
 					// 清空表单
 					document.getElementById('emailForm').reset();
+				});
+				
+				// 添加快捷键功能：按S键跳转到single.html
+				document.addEventListener('keydown', function(e) {
+					// 检查是否按下了S键（不区分大小写）
+					if (e.key === 'S' || e.key === 's') {
+						// 显示快捷键提示
+						const keyHint = document.getElementById('keyHint');
+						keyHint.classList.add('show');
+						
+						// 延迟跳转，让用户看到提示
+						setTimeout(function() {
+							window.location.href = 'single.html';
+						}, 300);
+						
+						// 3秒后隐藏提示（如果用户还在当前页面）
+						setTimeout(function() {
+							keyHint.classList.remove('show');
+						}, 3000);
+					}
+				});
+				
+				// 添加页面加载时的快捷键提示
+				window.addEventListener('load', function() {
+					// 显示快捷键提示（短暂显示，让用户知道这个功能）
+					setTimeout(function() {
+						const keyHint = document.getElementById('keyHint');
+						keyHint.innerHTML = '提示：按<span class="shortcut-key">S</span>键快速跳转到单篇文章';
+						keyHint.classList.add('show');
+						
+						setTimeout(function() {
+							keyHint.classList.remove('show');
+						}, 5000);
+					}, 1000);
+				});
+				
+				// 导航链接活动状态管理
+				document.querySelectorAll('#header .links a').forEach(link => {
+					link.addEventListener('click', function() {
+						// 移除所有链接的active类
+						document.querySelectorAll('#header .links a').forEach(l => {
+							l.classList.remove('active');
+						});
+						// 给当前点击的链接添加active类
+						this.classList.add('active');
+					});
+				});
+				
+				// 页面滚动时更新活动状态
+				window.addEventListener('scroll', function() {
+					const sections = ['about', 'daily', 'music', 'campus', 'contact'];
+					const headerHeight = 80;
 					
-					// 在实际应用中，可以添加以下代码：
-					// window.location.href = "mailto:2196854752@qq.com?subject=" + 
-					//   encodeURIComponent("來自個人網站的留言") + "&body=" + 
-					//   encodeURIComponent(`發件人: ${senderName} <${senderEmail}>\n\n${message}`);
+					for (let i = sections.length - 1; i >= 0; i--) {
+						const section = document.getElementById(sections[i]);
+						if (section) {
+							const rect = section.getBoundingClientRect();
+							if (rect.top <= headerHeight + 100 && rect.bottom >= headerHeight) {
+								// 移除所有链接的active类
+								document.querySelectorAll('#header .links a').forEach(l => {
+									l.classList.remove('active');
+								});
+								// 给对应的链接添加active类
+								const activeLink = document.querySelector(`#header .links a[href="#${sections[i]}"]`);
+								if (activeLink) {
+									activeLink.classList.add('active');
+								}
+								break;
+							}
+						}
+					}
 				});
 			</script>
 
